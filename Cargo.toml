@@ -1,0 +1,28 @@
+[package]
+name = "books"
+version = "0.1.0"
+authors = ["Cloves Carneiro Jr <ccarneiroj@gmail.com>"]
+
+[dependencies.postgres]
+version = "*"
+features = ["uuid"]
+
+[dependencies]
+rustc-serialize = "*"
+serde_json = "*"
+iron = "*"
+router = "*"
+logger = "*"
+persistent="*"
+urlencoded = "*"
+getopts = "0.2"
+
+r2d2="*"
+r2d2_postgres="*"
+
+[dependencies.jsonway]
+git = "https://github.com/rustless/jsonway"
+
+[dependencies.uuid]
+version = "*"
+features = ["rustc-serialize", "v4"]

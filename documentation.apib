@@ -1,0 +1,63 @@
+FORMAT: 1A
+
+# Books Service
+
+Books Service is a service responsible for managing books, and related resources, such as authors and categories.
+
+# Group Books
+
+Resources related to books in the API.
+
+## Book Collection
+
+# List All Books [/v1/books]
+
+## Retrieve a Message [GET]
+
++ Response 200 (application/json)
+
+        {
+          "data": [{
+            "attributes": {
+              "description": "Diva, a small yet brave dog, and Flea, a curious streetwise cat, develop an unexpected friendship in this unforgettable tale of discovery.",
+              "isbn": "978-1484722848",
+              "price": "987",
+              "slug": "the-story-of-diva-and-flea",
+              "title": "The Story of Diva and Flea"
+            },
+            "id": "7402ba2d-ee39-4d89-931e-3dc184201305",
+            "type": "books"
+          }, {
+            "attributes": {
+              "description": "New York Times bestselling author and artist James Dean brings Pete the Cat’s world to life under the sea in this new I Can Read book.",
+              "isbn": "0062303880",
+              "price": "500",
+              "slug": "pete-the-cat-scuba-cat",
+              "title": "Pete the Cat: Scuba-Cat"
+            },
+            "id": "c0352f46-ed3b-4663-a6f7-c3c46fe8992e",
+            "type": "books"
+          }]
+        }
+
+# List One Book [/v1/books/{isbn}]
+
+## Retrieve a book via its ISBN [GET]
++ Parameters
+  + isbn (required, `978-1484722848`)
+
++ Response 200 (application/json)
+
+        {
+          "data": {
+            "id": "7402ba2d-ee39-4d89-931e-3dc184201305",
+            "type": "books",
+            "attributes": {
+              "title": "The Story of Diva and Flea",
+              "slug": "the-story-of-diva-and-flea",
+              "description": "Diva, a small yet brave dog, and Flea, a curious streetwise cat, develop an unexpected friendship in this unforgettable tale of discovery.",
+              "isbn": "978-1484722848",
+              "price": 987
+            }
+          }
+        }
